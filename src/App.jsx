@@ -80,7 +80,7 @@ function App() {
 
   return (
     <div className="field-manual-container">
-      {/* Semantic Instruction Banner */}
+      {/* Semantic Instruction Header */}
       <header className={`step-banner ${!origin ? 'step-1' : !target ? 'step-2' : 'step-3'}`}>
         {!origin 
           ? 'STEP 1: CLICK YOUR POSITION ON THE MAP' 
@@ -90,10 +90,10 @@ function App() {
         }
       </header>
 
-      {/* Simplified Massive HUD with Semantic H1 */}
+      {/* Optimized Tactical HUD */}
       {distance !== null && (
         <main className="massive-hud" style={{ color: statusColor }}>
-          <h1 className="hud-label">MORTAR RANGE</h1>
+          <h1 className="hud-label">MORTAR TACTICAL DATA</h1>
           <div className="hud-value">{Math.round(distance)}m</div>
           <div className="hud-alert">
             {isWithinRange ? 'READY TO FIRE' : distance < 121 ? 'TOO CLOSE' : 'OUT OF RANGE'}
@@ -114,15 +114,14 @@ function App() {
         </div>
       </section>
 
-      {/* Reset Action Button */}
-      <button className="physical-reset-button" onClick={resetSystem} aria-label="Reset Map">
+      {/* Reset Map Button */}
+      <button className="physical-reset-button" onClick={resetSystem} aria-label="Reset Tactical Map">
         RESET MAP
       </button>
 
-      {/* Background Content for SEO */}
-      <footer className="seo-footer">
-        <h2>About PUBG Mortar Mechanics</h2>
-        <p>Optimize your tactical gameplay with precise Erangel coordinates and mortar calculations. This tool uses high-resolution Erangel map data to ensure your mortar shots land within the 121m to 700m effective range.</p>
+      {/* Tactical Keyword Footer */}
+      <footer className="tactical-footer">
+        Designed for the PUBG community. Accurate Erangel coordinate system for mortar deployment (121m to 700m).
       </footer>
 
       <div className="map-wrapper">
@@ -138,7 +137,7 @@ function App() {
           attributionControl={false}
         >
           <ImageOverlay
-            url="/Erangel_Main_High_Res.png"
+            url="/erangel.webp"
             bounds={mapBounds}
             className="tactical-map"
           />
